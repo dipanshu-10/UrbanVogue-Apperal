@@ -1,21 +1,7 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-
-# IntelliJ
 .idea/
 *.iml
-
-# Spring Boot
-/target
+node_modules/
+target/
 *.log
 *.class
-
-# Node
-/node_modules
-
-# Env
 .env
-
-# OS
-.DS_Store
