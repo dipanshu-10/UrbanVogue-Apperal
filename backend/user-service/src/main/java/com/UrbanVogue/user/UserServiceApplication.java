@@ -10,5 +10,4 @@ public class UserServiceApplication {
 		SpringApplication.run(UserServiceApplication.class, args);
         System.out.println("Hii  user service it is ");
 	}
-
 }

@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715813c9-b0d8-4a03-a0cb-487bc9dc0f59" name="Changes" comment="">
+    <list default="true" id="715813c9-b0d8-4a03-a0cb-487bc9dc0f59" name="Changes" comment="admin functons changes">
+      <change afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/AuthModule/service/AdminInitializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/AuthModule/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/AuthModule/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/AuthModule/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/AuthModule/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/AuthModule/jwt/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/AuthModule/jwt/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/AuthModule/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/AuthModule/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/UserServiceApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/UrbanVogueDB1.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/UrbanVogueDB1.mv.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/UrbanVogueDB1.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/UrbanVogueDB1.trace.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +62,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.AdminServiceApplication.executor": "Run",
+    "Application.AdminServiceApplication.executor": "Debug",
     "Application.ApiGatewayApplication.executor": "Run",
     "Application.PaymentServiceApplication.executor": "Run",
     "Application.UserServiceApplication.executor": "Run",
@@ -66,7 +75,7 @@
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.AdminServiceApplication">
+  <component name="RunManager" selected="Application.ApiGatewayApplication">
     <configuration name="AdminServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.UrbanVogue.admin.AdminServiceApplication" />
       <module name="admin-service" />
@@ -128,5 +137,7 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/frontend" />
     </ignored-roots>
+    <MESSAGE value="admin functons changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="admin functons changes" />
   </component>
 </project>

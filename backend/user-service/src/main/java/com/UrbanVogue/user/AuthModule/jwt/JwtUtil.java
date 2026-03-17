@@ -65,12 +65,13 @@ public class JwtUtil {
     @Value("${jwt.expiration}")
     private long EXPIRATION;
 
-    public String generateToken(String email) {
+    public String generateToken(String email,String role) {
 
         SecretKey key = Keys.hmacShaKeyFor(SECRET.getBytes(StandardCharsets.UTF_8));
 
         return Jwts.builder()
                 .setSubject(email)
+                .claim("role", role)
                 .setIssuedAt(new Date())
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION))
                 .signWith(key, SignatureAlgorithm.HS256)

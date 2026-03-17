@@ -20,7 +20,7 @@ public class User {
     private String phoneNumber;
 
     private String address;
-
+    private String role;
     public User() {}
 
     public User(String name, String email, String password, String phoneNumber, String address) {
@@ -52,4 +52,8 @@ public class User {
     public String getAddress() { return address; }
 
     public void setAddress(String address) { this.address = address; }
+
+    public String getRole() { return role; }
+
+    public void setRole(String role) { this.role = role; }
 }
