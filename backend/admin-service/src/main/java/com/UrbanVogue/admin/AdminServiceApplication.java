@@ -8,7 +8,7 @@ public class AdminServiceApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(AdminServiceApplication.class, args);
-        System.out.println("hii it is admin service here");
+        System.out.println("hii it is admin service here by Akash");
 	}
 
 }
