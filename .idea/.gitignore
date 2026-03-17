@@ -5,3 +5,9 @@ target/
 *.log
 *.class
 .env
+
+data/
+*.mv.db
+*.trace.db
+!UrbanVogueDB1.mv
+*.lock
