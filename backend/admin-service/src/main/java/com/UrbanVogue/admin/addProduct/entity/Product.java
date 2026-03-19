@@ -18,6 +18,7 @@ public class Product {
     private Double price;
     private String imageUrl;
     private String description;
+    private Long numberOfPieces;
     private LocalDateTime createdAt;
 
     public Product() {}
@@ -97,5 +98,12 @@ public class Product {
 
     public LocalDateTime getCreatedAt() {
         return createdAt;
+    }
+    public Long getNumberOfPieces() {
+        return numberOfPieces;
+    }
+
+    public void setNumberOfPieces(Long numberOfPieces) {
+        this.numberOfPieces = numberOfPieces;
     }
 }

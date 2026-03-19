@@ -9,6 +9,7 @@ public class ProductRequestDTO {
     private String color;
     private Double price;
     private String imageUrl;
+    private Long   numberOfPieces;
     private String description;
 
     public ProductRequestDTO() {}
@@ -75,5 +76,14 @@ public class ProductRequestDTO {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Long getNumberOfPieces()
+    {
+        return numberOfPieces;
+    }
+    public void setNumberOfPieces(Long numberOfPieces)
+    {
+        this.numberOfPieces=numberOfPieces;
     }
 }

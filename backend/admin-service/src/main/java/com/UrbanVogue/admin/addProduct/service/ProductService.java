@@ -25,7 +25,7 @@ public class ProductService {
         product.setPrice(request.getPrice());
         product.setImageUrl(request.getImageUrl());
         product.setDescription(request.getDescription());
-
+        product.setNumberOfPieces(request.getNumberOfPieces());
         // Save to DB
         Product savedProduct = productRepository.save(product);
 
