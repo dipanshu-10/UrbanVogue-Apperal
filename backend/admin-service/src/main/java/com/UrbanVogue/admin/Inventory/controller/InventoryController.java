@@ -20,7 +20,7 @@ public class InventoryController {
     public ResponseEntity<String> updateStock(@PathVariable Long productId,
                                               @RequestParam int numberOfPieces) {
         inventoryService.updateStock(productId, numberOfPieces);
-        return ResponseEntity.ok("Stock updated successfully");
+        return ResponseEntity.ok("Stock updated for product id: " + productId);
     }
 
     //  Fetch all products (admin view)

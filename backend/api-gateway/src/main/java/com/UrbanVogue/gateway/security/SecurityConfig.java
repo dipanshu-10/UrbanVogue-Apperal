@@ -39,7 +39,9 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .cors(cors -> {})
                 .authorizeExchange(exchange -> exchange
+                        .pathMatchers("/user/getProducts/**").permitAll()
                         .pathMatchers(HttpMethod.OPTIONS).permitAll()   // allow preflight
+
                         .anyExchange().permitAll()
                 );
 

@@ -3,7 +3,7 @@ package com.UrbanVogue.admin.Inventory.dto;
 public class InventoryProductDTO {
     private Long id;
     private String name;
-    private int numberOfPieces;
+    private Long numberOfPieces;
 
     // getters & setters
     public Long getId() { return id; }
@@ -12,6 +12,6 @@ public class InventoryProductDTO {
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
 
-    public int getNumberOfPieces() { return numberOfPieces; }
-    public void setNumberOfPieces(int numberOfPieces) { this.numberOfPieces = numberOfPieces; }
+    public Long getNumberOfPieces() { return numberOfPieces; }
+    public void setNumberOfPieces(Long numberOfPieces) { this.numberOfPieces = numberOfPieces; }
 }
