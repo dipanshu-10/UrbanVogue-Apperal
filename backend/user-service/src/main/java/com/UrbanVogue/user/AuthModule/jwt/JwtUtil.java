@@ -1,51 +1,7 @@
-////package com.UrbanVogue.user.AuthModule.jwt;
-////
-////import io.jsonwebtoken.Jwts;
-////import io.jsonwebtoken.SignatureAlgorithm;
-////import java.util.Date;
-////
-////public class JwtUtil {
-////
-////    private static final String SECRET_KEY = "mysecretkey";
-////
-////    public static String generateToken(String email) {
-////
-////        return Jwts.builder()
-////                .setSubject(email)
-////                .setIssuedAt(new Date())
-////                .setExpiration(new Date(System.currentTimeMillis() + 86400000)) // 1 day
-////                .signWith(SignatureAlgorithm.HS256, SECRET_KEY)
-////                .compact();
-////    }
-////}
-//
-//package com.UrbanVogue.user.AuthModule.jwt;
-//
-//import io.jsonwebtoken.Jwts;
-//import io.jsonwebtoken.SignatureAlgorithm;
-//import io.jsonwebtoken.security.Keys;
-//
-//import javax.crypto.SecretKey;
-//import java.util.Date;
-//
-//public class JwtUtil {
-//
-//    private static final SecretKey SECRET_KEY =
-//            Keys.secretKeyFor(SignatureAlgorithm.HS256);
-//
-//    public static String generateToken(String email) {
-//
-//        return Jwts.builder()
-//                .setSubject(email)
-//                .setIssuedAt(new Date())
-//                .setExpiration(new Date(System.currentTimeMillis() + 86400000))
-//                .signWith(SECRET_KEY)
-//                .compact();
-//    }
-//}
+
+// here we are actually genrating the jwt tokens
 
 package com.UrbanVogue.user.AuthModule.jwt;
-
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
