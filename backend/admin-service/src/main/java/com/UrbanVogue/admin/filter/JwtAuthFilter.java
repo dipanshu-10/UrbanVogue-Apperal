@@ -40,7 +40,8 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         try {
             String email = jwtUtil.extractEmail(token);
             String role = jwtUtil.extractRole(token);
-
+           System.out.println(email);
+           System.out.println(role);
             if (email != null && role != null) {
 
                 UsernamePasswordAuthenticationToken auth =
@@ -49,7 +50,7 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                                 null,
                                 List.of(new SimpleGrantedAuthority("ROLE_" + role))
                         );
-
+                System.out.println(auth);
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }
 

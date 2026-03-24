@@ -17,7 +17,7 @@ spring:
           predicates:
             - Path=/auth/**
 
-        # USER service (future modules: orders, products etc.)
+        # USER service
         - id: user-service
           uri: http://localhost:8091
           predicates:
@@ -30,7 +30,7 @@ spring:
             - Path=/admin/**
 
       # for geting the products or explore page section
-        - id: admin-service
+        - id: catalog-service
           uri: http://localhost:8092
           predicates:
             - Path=/catalog/**

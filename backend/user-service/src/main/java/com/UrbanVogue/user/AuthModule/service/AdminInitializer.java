@@ -9,7 +9,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @Configuration
 public class AdminInitializer {
-
+    //  commandLinerunner we have and it will be the first file which will run when server start
     @Bean
     CommandLineRunner initAdmin(UserRepository userRepository,
                                 BCryptPasswordEncoder passwordEncoder) {

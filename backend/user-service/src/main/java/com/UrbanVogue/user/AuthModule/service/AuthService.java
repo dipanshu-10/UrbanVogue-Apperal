@@ -2,7 +2,7 @@ package com.UrbanVogue.user.AuthModule.service;
 
 import com.UrbanVogue.user.AuthModule.dto.*;
 import com.UrbanVogue.user.AuthModule.entity.User;
-import com.UrbanVogue.user.AuthModule.jwt.JwtUtil;
+import com.UrbanVogue.user.security.JwtUtil;
 import com.UrbanVogue.user.AuthModule.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

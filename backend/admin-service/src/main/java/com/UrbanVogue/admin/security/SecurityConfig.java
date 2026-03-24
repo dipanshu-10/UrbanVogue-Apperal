@@ -26,7 +26,11 @@ public class SecurityConfig {
                 )
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/admin/**").hasRole("ADMIN")
+                        //  PRODUCT FETCH (USER + ADMIN allowed)
+                        .requestMatchers("/admin/products/**")
+                        .hasAnyRole("ADMIN", "USER")
                         .requestMatchers("/catalog/**").permitAll()
+                        .requestMatchers("/internal/**").permitAll()
                 .anyRequest().authenticated()
 
 

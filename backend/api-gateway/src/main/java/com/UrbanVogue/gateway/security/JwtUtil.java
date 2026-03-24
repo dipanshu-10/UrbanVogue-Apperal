@@ -1,17 +1,13 @@
-
-
 package com.UrbanVogue.gateway.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
-import java.util.Date;
 
 @Component
 public class JwtUtil {
@@ -19,22 +15,29 @@ public class JwtUtil {
     @Value("${jwt.secret}")
     private String SECRET;
 
-    @Value("${jwt.expiration}")
-    private long EXPIRATION;
-
-    public String generateToken(String email,String role) {
-
-        SecretKey key = Keys.hmacShaKeyFor(SECRET.getBytes(StandardCharsets.UTF_8));
-
-        return Jwts.builder()
-                .setSubject(email)
-                .claim("role", role)
-                .setIssuedAt(new Date())
-                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION))
-                .signWith(key, SignatureAlgorithm.HS256)
-                .compact();
+    // Extract Email (subject)
+    public String extractEmail(String token) {
+        return extractAllClaims(token).getSubject();
     }
+
+    //  Extract Role
+    public String extractRole(String token) {
+        return extractAllClaims(token).get("role", String.class);
+    }
+
+    //  Validate Token
+    public boolean validateToken(String token) {
+        try {
+            extractAllClaims(token);
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    //  Common method
     private Claims extractAllClaims(String token) {
+
         SecretKey key = Keys.hmacShaKeyFor(SECRET.getBytes(StandardCharsets.UTF_8));
 
         return Jwts.parserBuilder()
@@ -42,13 +45,5 @@ public class JwtUtil {
                 .build()
                 .parseClaimsJws(token)
                 .getBody();
-    }
-    public boolean validateToken(String token) {
-        try {
-            extractAllClaims(token); // agar valid hoga to parse ho jayega
-            return true;
-        } catch (Exception e) {
-            return false;
-        }
     }
 }
