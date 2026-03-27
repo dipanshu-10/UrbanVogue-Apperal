@@ -4,6 +4,7 @@ import com.UrbanVogue.admin.addProduct.dto.ProductRequestDTO;
 import com.UrbanVogue.admin.addProduct.dto.ProductResponseDTO;
 import com.UrbanVogue.admin.addProduct.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -18,4 +19,11 @@ public class ProductController {
     public ProductResponseDTO addProduct(@RequestBody ProductRequestDTO request) {
         return productService.addProduct(request);
     }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteProduct(@PathVariable Long id) {
+        return ResponseEntity.ok(productService.deleteProduct(id));
+    }
+
+
 }

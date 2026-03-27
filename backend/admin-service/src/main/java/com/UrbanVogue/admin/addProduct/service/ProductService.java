@@ -47,4 +47,24 @@ public class ProductService {
                 "Product added successfully"
         );
     }
+
+    public String deleteProduct(Long id) {
+
+        // 1. Check if product exists
+        if (!productRepository.existsById(id)) {
+            return "Product not found";
+        }
+
+        // 2. Delete from Inventory FIRST (important)
+        Inventory inventory = inventoryRepository.findByProductId(id);
+        if (inventory != null) {
+            inventoryRepository.delete(inventory);
+        }
+
+        // 3. Delete from Product table
+        productRepository.deleteById(id);
+
+        return "Product deleted successfully";
+    }
+
 }
