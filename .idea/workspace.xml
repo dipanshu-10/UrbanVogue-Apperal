@@ -4,19 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="715813c9-b0d8-4a03-a0cb-487bc9dc0f59" name="Changes" comment="admin functons changes">
-      <change afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/AuthModule/service/AdminInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+    <list default="true" id="715813c9-b0d8-4a03-a0cb-487bc9dc0f59" name="Changes" comment="code-formating and inter micrservice communication done">
+      <change afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/OrderModule/controller/AdminOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/OrderModule/controller/CartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/OrderModule/dto/CartRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/OrderModule/dto/CartResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/OrderModule/dto/MyOrderResponseDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/OrderModule/service/CartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/exception/CustomException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/exception/ErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/exception/GlobalExceptionHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/exception/ResourceNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/exception/UnauthorizedException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/admin-service/src/main/java/com/UrbanVogue/admin/filter/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/admin-service/src/main/java/com/UrbanVogue/admin/filter/JwtAuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/api-gateway/src/main/java/com/UrbanVogue/gateway/filter/AuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api-gateway/src/main/java/com/UrbanVogue/gateway/filter/AuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/api-gateway/src/main/java/com/UrbanVogue/gateway/security/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api-gateway/src/main/java/com/UrbanVogue/gateway/security/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/api-gateway/src/main/java/com/UrbanVogue/gateway/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api-gateway/src/main/java/com/UrbanVogue/gateway/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/api-gateway/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/api-gateway/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/user-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/AuthModule/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/AuthModule/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/AuthModule/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/AuthModule/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/AuthModule/jwt/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/AuthModule/jwt/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/AuthModule/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/AuthModule/service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/AuthModule/jwt/JwtUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/OrderModule/client/ProductClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/OrderModule/client/ProductClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/OrderModule/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/OrderModule/controller/OrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/OrderModule/entity/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/OrderModule/entity/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/OrderModule/repository/OrderRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/OrderModule/repository/OrderRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/OrderModule/service/OrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/OrderModule/service/OrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/UserServiceApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/UserServiceApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/UrbanVogueDB1.mv.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/UrbanVogueDB1.mv.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/UrbanVogueDB1.trace.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/UrbanVogueDB1.trace.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/filter/JwtAuthFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/filter/JwtAuthFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/security/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/security/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/security/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/UrbanVogueDB.mv.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/UrbanVogueDB.trace.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/UrbanVogueDB1.trace.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/admindb.mv.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/paymentdb.mv.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/userdb.mv.db" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +49,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -34,19 +58,20 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "dipanshu-10"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;dipanshu-10&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/dipanshu-10/UrbanVogue-Apperal.git",
-    "accountId": "71ba586f-bf7c-4f7e-b81b-a4c0ccb4477e"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/dipanshu-10/UrbanVogue-Apperal.git&quot;,
+    &quot;accountId&quot;: &quot;71ba586f-bf7c-4f7e-b81b-a4c0ccb4477e&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/backend/admin-service/src/main/java/com/UrbanVogue/admin/security/SecurityConfig.java" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/backend/user-service/src/main/java/com/UrbanVogue/user/AuthModule/jwt/JwtUtil.java" root0="SKIP_INSPECTION" />
   </component>
   <component name="ProjectColorInfo">{
@@ -60,21 +85,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.AdminServiceApplication.executor": "Debug",
-    "Application.ApiGatewayApplication.executor": "Run",
-    "Application.PaymentServiceApplication.executor": "Run",
-    "Application.UserServiceApplication.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AdminServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.PaymentServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Server.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UserServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.ApiGatewayApplication">
     <configuration name="AdminServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.UrbanVogue.admin.AdminServiceApplication" />
@@ -115,11 +141,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Server" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.h2.tools.Server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.h2.tools.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.ApiGatewayApplication" />
-        <item itemvalue="Application.AdminServiceApplication" />
         <item itemvalue="Application.PaymentServiceApplication" />
+        <item itemvalue="Application.AdminServiceApplication" />
+        <item itemvalue="Application.Server" />
       </list>
     </recent_temporary>
   </component>
@@ -131,13 +170,165 @@
       <option name="presentableId" value="Default" />
       <updated>1773147262259</updated>
     </task>
+    <task id="LOCAL-00001" summary="admin functons changes">
+      <option name="closed" value="true" />
+      <created>1773741861038</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1773741861039</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Db changes">
+      <option name="closed" value="true" />
+      <created>1773743366671</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1773743366672</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Db changes">
+      <option name="closed" value="true" />
+      <created>1773743403960</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1773743403960</updated>
+    </task>
+    <task id="LOCAL-00004" summary="port change">
+      <option name="closed" value="true" />
+      <created>1773744942610</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1773744942610</updated>
+    </task>
+    <task id="LOCAL-00005" summary="made the change to the admin service">
+      <option name="closed" value="true" />
+      <created>1773745609553</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1773745609553</updated>
+    </task>
+    <task id="LOCAL-00006" summary="made the change to the admin service">
+      <option name="closed" value="true" />
+      <created>1773745823828</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1773745823828</updated>
+    </task>
+    <task id="LOCAL-00007" summary="made the change to the user service">
+      <option name="closed" value="true" />
+      <created>1773814393104</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1773814393104</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add product funtionality implemented">
+      <option name="closed" value="true" />
+      <created>1773840257624</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1773840257624</updated>
+    </task>
+    <task id="LOCAL-00009" summary="entity changes in the product">
+      <option name="closed" value="true" />
+      <created>1773903659586</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1773903659586</updated>
+    </task>
+    <task id="LOCAL-00010" summary="browsing product functionality">
+      <option name="closed" value="true" />
+      <created>1773983875765</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1773983875765</updated>
+    </task>
+    <task id="LOCAL-00011" summary="updated the GetProductController and its DTO">
+      <option name="closed" value="true" />
+      <created>1773984081760</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1773984081760</updated>
+    </task>
+    <task id="LOCAL-00012" summary="InventoryController and its DTO changes">
+      <option name="closed" value="true" />
+      <created>1773984149382</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1773984149382</updated>
+    </task>
+    <task id="LOCAL-00013" summary="security changes to allow some request to acess the admin-Microservice">
+      <option name="closed" value="true" />
+      <created>1773984214138</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1773984214138</updated>
+    </task>
+    <task id="LOCAL-00014" summary="payemnt-service working code">
+      <option name="closed" value="true" />
+      <created>1774245247195</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1774245247195</updated>
+    </task>
+    <task id="LOCAL-00015" summary="payemnt-service working code and adding the dto's">
+      <option name="closed" value="true" />
+      <created>1774269838412</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1774269838412</updated>
+    </task>
+    <task id="LOCAL-00016" summary="code-formating and inter micrservice communication done">
+      <option name="closed" value="true" />
+      <created>1774325051478</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1774325051478</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$/frontend" />
     </ignored-roots>
     <MESSAGE value="admin functons changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="admin functons changes" />
+    <MESSAGE value="Db changes" />
+    <MESSAGE value="port change" />
+    <MESSAGE value="made the change to the admin service" />
+    <MESSAGE value="add product funtionality implemented" />
+    <MESSAGE value="entity changes in the product" />
+    <MESSAGE value="browsing product functionality" />
+    <MESSAGE value="updated the GetProductController and its DTO" />
+    <MESSAGE value="InventoryController and its DTO changes" />
+    <MESSAGE value="security changes to allow some request to acess the admin-Microservice" />
+    <MESSAGE value="payemnt-service working code" />
+    <MESSAGE value="payemnt-service working code and adding the dto's" />
+    <MESSAGE value="code-formating and inter micrservice communication done" />
+    <option name="LAST_COMMIT_MESSAGE" value="code-formating and inter micrservice communication done" />
   </component>
 </project>
