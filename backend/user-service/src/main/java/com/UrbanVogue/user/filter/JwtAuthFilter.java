@@ -72,3 +72,94 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 }
+
+
+
+
+
+
+
+
+
+//
+//package com.UrbanVogue.user.filter;
+//
+//import jakarta.servlet.FilterChain;
+//import jakarta.servlet.ServletException;
+//import jakarta.servlet.http.HttpServletRequest;
+//import jakarta.servlet.http.HttpServletResponse;
+//
+//import com.UrbanVogue.user.security.JwtUtil;
+//
+//import org.springframework.beans.factory.annotation.Autowired;
+//import org.springframework.stereotype.Component;
+//import org.springframework.web.filter.OncePerRequestFilter;
+//
+//import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+//import org.springframework.security.core.authority.SimpleGrantedAuthority;
+//import org.springframework.security.core.context.SecurityContextHolder;
+//
+//import java.io.IOException;
+//import java.util.Collections;
+//
+//@Component
+//public class JwtAuthFilter extends OncePerRequestFilter {
+//
+//    private final JwtUtil jwtUtil;
+//
+//    // injecting the jwtUtil
+//    public JwtAuthFilter(JwtUtil jwtUtil) {
+//        this.jwtUtil = jwtUtil;
+//    }
+//
+//
+//    @Override
+//    protected void doFilterInternal(HttpServletRequest request,
+//                                    HttpServletResponse response,
+//                                    FilterChain filterChain)
+//            throws ServletException, IOException {
+//
+//
+//        String email = request.getHeader("X-User-Email");
+//        String role = request.getHeader("X-User-Role");
+//
+//        System.out.println("EMAIL: " + email);
+//        System.out.println("ROLE: " + role);
+//
+//        // Fallback to JWT if headers are missing
+//        if (email == null || role == null) {
+//
+//            String authHeader = request.getHeader("Authorization");
+//
+//            if (authHeader != null && authHeader.startsWith("Bearer ")) {
+//
+//                String token = authHeader.substring(7);
+//
+//                if (jwtUtil.validateToken(token)) {
+//                    email = jwtUtil.extractEmail(token);
+//                    role = jwtUtil.extractRole(token);
+//                } else {
+//                    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+//                    return;
+//                }
+//            }
+//        }
+//
+//        // Set authentication if valid data found
+//        if (email != null && role != null) {
+//
+//            UsernamePasswordAuthenticationToken authentication =
+//                    new UsernamePasswordAuthenticationToken(
+//                            email,
+//                            null,
+//                            Collections.singletonList(
+//                                    new SimpleGrantedAuthority("ROLE_" + role)
+//                            )
+//                    );
+//
+//            SecurityContextHolder.getContext().setAuthentication(authentication);
+//        }
+//
+//        filterChain.doFilter(request, response);
+//    }
+//}

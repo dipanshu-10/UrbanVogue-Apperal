@@ -28,35 +28,42 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                                     FilterChain filterChain)
             throws ServletException, IOException {
 
-        String authHeader = request.getHeader("Authorization");
+        String email = request.getHeader("X-User-Email");
+        String role = request.getHeader("X-User-Role");
 
-        if (authHeader == null || !authHeader.startsWith("Bearer ")) {
-            filterChain.doFilter(request, response);
-            return;
+        System.out.println("EMAIL: " + email);
+        System.out.println("ROLE: " + role);
+
+        // Fallback to JWT if headers missing
+        if (email == null || role == null) {
+
+            String authHeader = request.getHeader("Authorization");
+
+            if (authHeader != null && authHeader.startsWith("Bearer ")) {
+
+                String token = authHeader.substring(7);
+
+                try {
+                    email = jwtUtil.extractEmail(token);
+                    role = jwtUtil.extractRole(token);
+                } catch (Exception e) {
+                    response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                    return;
+                }
+            }
         }
 
-        String token = authHeader.substring(7);
+        // Set authentication
+        if (email != null && role != null) {
 
-        try {
-            String email = jwtUtil.extractEmail(token);
-            String role = jwtUtil.extractRole(token);
-           System.out.println(email);
-           System.out.println(role);
-            if (email != null && role != null) {
+            UsernamePasswordAuthenticationToken auth =
+                    new UsernamePasswordAuthenticationToken(
+                            email,
+                            null,
+                            List.of(new SimpleGrantedAuthority("ROLE_" + role))
+                    );
 
-                UsernamePasswordAuthenticationToken auth =
-                        new UsernamePasswordAuthenticationToken(
-                                email,
-                                null,
-                                List.of(new SimpleGrantedAuthority("ROLE_" + role))
-                        );
-                System.out.println(auth);
-                SecurityContextHolder.getContext().setAuthentication(auth);
-            }
-
-        } catch (Exception e) {
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            return;
+            SecurityContextHolder.getContext().setAuthentication(auth);
         }
 
         filterChain.doFilter(request, response);

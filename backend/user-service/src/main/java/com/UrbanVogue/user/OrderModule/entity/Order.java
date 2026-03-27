@@ -10,7 +10,7 @@ public class Order {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String  id;
 
     private Long productId;
 
@@ -28,6 +28,8 @@ public class Order {
 
     private String paymentStatus;
 
+    private String  cartId;
+
     private String orderStatus;
 
     private LocalDateTime createdAt;
@@ -39,11 +41,11 @@ public class Order {
     }
     // getters & setters
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -117,5 +119,21 @@ public class Order {
 
     public void setOrderStatus(String orderStatus) {
         this.orderStatus = orderStatus;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
+
+    public void setCreatedAt(LocalDateTime createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    public String  getCartId() {
+        return cartId;
+    }
+
+    public void setCartId(String cartId) {
+        this.cartId=cartId;
     }
 }

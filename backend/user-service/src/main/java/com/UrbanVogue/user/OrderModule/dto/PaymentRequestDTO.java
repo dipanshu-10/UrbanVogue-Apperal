@@ -2,15 +2,15 @@ package com.UrbanVogue.user.OrderModule.dto;
 
 public class PaymentRequestDTO {
 
-    private Long orderId;
+    private String orderId;
     private Double amount;
 
-    public PaymentRequestDTO(Long orderId, Double amount) {
+    public PaymentRequestDTO(String orderId, Double amount) {
         this.orderId = orderId;
         this.amount = amount;
     }
 
-    public Long getOrderId() {
+    public String getOrderId() {
         return orderId;
     }
 

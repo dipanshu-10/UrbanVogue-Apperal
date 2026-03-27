@@ -12,7 +12,7 @@ public class PaymentClient {
     @Autowired
     private RestTemplate restTemplate;
 
-    public PaymentResponseDTO processPayment(Long orderId, Double amount) {
+    public PaymentResponseDTO processPayment(String orderId, Double amount) {
 
         PaymentRequestDTO request = new PaymentRequestDTO(orderId, amount);
 

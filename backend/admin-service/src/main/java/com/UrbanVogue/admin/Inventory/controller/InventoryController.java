@@ -1,6 +1,6 @@
 package com.UrbanVogue.admin.Inventory.controller;
 
-import com.UrbanVogue.admin.addProduct.entity.Product;
+import com.UrbanVogue.admin.Inventory.entity.Inventory;
 import com.UrbanVogue.admin.Inventory.service.InventoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -24,8 +24,13 @@ public class InventoryController {
     }
 
     //  Fetch all products (admin view)
-    @GetMapping("/products")
-    public ResponseEntity<List<Product>> getAllProducts() {
+//    @GetMapping("/products")
+//    public ResponseEntity<List<Product>> getAllProducts() {
+//        return ResponseEntity.ok(inventoryService.getAllProducts());
+//    }
+        @GetMapping("/products")
+    public ResponseEntity<List<Inventory>> getAllProducts() {
         return ResponseEntity.ok(inventoryService.getAllProducts());
     }
+
 }

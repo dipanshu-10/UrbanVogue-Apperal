@@ -47,3 +47,60 @@ public class JwtUtil {
                 .getBody();
     }
 }
+
+
+
+
+
+
+//
+//package com.UrbanVogue.gateway.security;
+//
+//import io.jsonwebtoken.Claims;
+//import io.jsonwebtoken.Jwts;
+//import io.jsonwebtoken.security.Keys;
+//import org.springframework.beans.factory.annotation.Value;
+//import org.springframework.stereotype.Component;
+//
+//import javax.crypto.SecretKey;
+//import java.nio.charset.StandardCharsets;
+//
+//@Component
+//public class JwtUtil {
+//
+//    @Value("${jwt.secret}")
+//    private String SECRET;
+//
+//    // Extract email (subject)
+//    public String extractEmail(String token) {
+//        return extractAllClaims(token).getSubject();
+//    }
+//
+//    // Extract role claim
+//    public String extractRole(String token) {
+//        return extractAllClaims(token).get("role", String.class);
+//    }
+//
+//    // Validate token signature and expiration
+//    public boolean validateToken(String token) {
+//        try {
+//            extractAllClaims(token);
+//            return true;
+//        } catch (Exception ex) {
+//            return false;
+//        }
+//    }
+//
+//    // Parse token and return all claims
+//    private Claims extractAllClaims(String token) {
+//        System.out.println("SECRET: " + SECRET);
+//        SecretKey key = Keys.hmacShaKeyFor(SECRET.getBytes(StandardCharsets.UTF_8));
+//
+//        return Jwts.parserBuilder()
+//                .setSigningKey(key)
+//                .build()
+//                .parseClaimsJws(token)
+//                .getBody();
+//    }
+//
+//}
