@@ -13,6 +13,7 @@ public class ProductController {
     @Autowired
     private ProductService productService;
 
+    // product add route we can hit from here
     @PostMapping("/add")
     public ProductResponseDTO addProduct(@RequestBody ProductRequestDTO request) {
         return productService.addProduct(request);

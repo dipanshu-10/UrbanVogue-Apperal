@@ -15,7 +15,7 @@ public class UpdateProductController {
         this.updateProductService = updateProductService;
     }
 
-    @PutMapping("/update/{id}")
+    @PatchMapping("/update/{id}")
     public Product updateProduct(
             @PathVariable Long id,
             @RequestBody UpdateProductRequestDTO request) {
