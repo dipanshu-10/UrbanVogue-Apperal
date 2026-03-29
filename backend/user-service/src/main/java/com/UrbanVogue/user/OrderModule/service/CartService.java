@@ -36,7 +36,7 @@ public class CartService {
         String email = jwtUtil.extractEmail(token);
 
 
-        String cartId = UUID.randomUUID().toString(); // genrating the cart_id
+        String cartId = UUID.randomUUID().toString().substring(0,4); // genrating the cart_id
         List<CartResponseDTO.ProductResponse> responseList = new ArrayList<>();
         List<Order> inStockOrders = new ArrayList<>();
         double totalAmount = 0.0;
@@ -83,10 +83,12 @@ public class CartService {
 
         //  Call payment only if at least one product in stock
         if (!inStockOrders.isEmpty()) {
-            // Use first order id as reference for cart transaction
+            // Using the cart_id for the for tracing the cart orders
             String cartReferenceOrderId = cartId ;//inStockOrders.get(0).getId();
 
-            PaymentResponseDTO paymentResponse = paymentClient.processPayment(cartReferenceOrderId, totalAmount);
+            // creating the idempotency key here
+            String idempotencyKey = UUID.randomUUID().toString().replace("-", "").substring(0, 10);
+            PaymentResponseDTO paymentResponse = paymentClient.processPayment(cartReferenceOrderId, totalAmount,idempotencyKey);
 
             boolean success = "SUCCESS".equals(paymentResponse.getStatus());
 

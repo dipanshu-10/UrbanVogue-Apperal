@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 
 @Service
@@ -66,10 +67,13 @@ public class OrderService {
         order.setTotalAmount(totalAmount);
         order.setAddress(request.getAddress());
         order.setCartId(null);   // because it is the single order only
+        orderRepository.save(order);
 
+        // generating the idempotency key
+        String idempotencyKey = UUID.randomUUID().toString().replace("-", "").substring(0, 5);
         // call payment service
         PaymentResponseDTO paymentResponse =
-                paymentClient.processPayment(order.getId(), totalAmount);
+                paymentClient.processPayment(order.getId(), totalAmount,idempotencyKey);
 
         if ("SUCCESS".equals(paymentResponse.getStatus())) {
 

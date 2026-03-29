@@ -12,9 +12,9 @@ public class PaymentClient {
     @Autowired
     private RestTemplate restTemplate;
 
-    public PaymentResponseDTO processPayment(String orderId, Double amount) {
+    public PaymentResponseDTO processPayment(String orderId, Double amount,String idempotencyKey) {
 
-        PaymentRequestDTO request = new PaymentRequestDTO(orderId, amount);
+        PaymentRequestDTO request = new PaymentRequestDTO(orderId, amount, idempotencyKey);
 
         return restTemplate.postForObject(
                 "http://localhost:8093/payment/process",

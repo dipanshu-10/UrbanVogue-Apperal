@@ -10,6 +10,7 @@ public class PaymentResponseDTO {
         this.status = status;
     }
 
+
     public String getStatus() {
         return status;
     }

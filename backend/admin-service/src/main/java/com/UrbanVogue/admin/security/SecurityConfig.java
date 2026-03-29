@@ -28,7 +28,7 @@ public class SecurityConfig {
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         //  PRODUCT FETCH (USER + ADMIN allowed)
                         .requestMatchers("/admin/products/**")
-                        .hasAnyRole("ADMIN", "USER")
+                        .hasAnyRole("ADMIN","USER")
                         .requestMatchers("/catalog/**").permitAll()
                         .requestMatchers("/internal/**").permitAll()
                 .anyRequest().authenticated()
