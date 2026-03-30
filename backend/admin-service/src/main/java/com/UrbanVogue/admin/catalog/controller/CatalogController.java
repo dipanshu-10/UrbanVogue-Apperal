@@ -20,7 +20,13 @@ public class CatalogController {
     public List<CatalogProductDTO> getProducts() {
         return catalogService.getProducts();
     }
-
+    // get products by search
+    @GetMapping("/search")
+    public List<CatalogProductDTO> searchByCategory(
+            @RequestParam String category
+    ) {
+        return catalogService.searchByCategory(category);
+    }
     // Product detail
     @GetMapping("/getProducts/{id}")
     public Product getProductById(@PathVariable Long id) {

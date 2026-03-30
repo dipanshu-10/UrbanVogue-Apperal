@@ -29,7 +29,22 @@ public class CatalogService {
                 })
                 .collect(Collectors.toList());
     }
+   //  for fetching the products by the category
+   public List<CatalogProductDTO> searchByCategory(String category) {
 
+       List<Product> products = productRepository.findByCategoryIgnoreCase(category);
+
+       return products.stream()
+               .map(product -> {
+                   CatalogProductDTO dto = new CatalogProductDTO();
+                   dto.setId(product.getId());
+                   dto.setName(product.getName());
+                   dto.setPrice(product.getPrice());
+                   dto.setImageUrl(product.getImageUrl());
+                   return dto;
+               })
+               .collect(Collectors.toList());
+   }
     // for fetching the products details by id
     public Product getProductById(Long id) {
         return productRepository.findById(id)
