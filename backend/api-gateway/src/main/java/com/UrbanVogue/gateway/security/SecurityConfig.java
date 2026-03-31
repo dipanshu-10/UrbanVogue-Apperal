@@ -23,13 +23,19 @@ public SecurityWebFilterChain springSecurityFilterChain(ServerHttpSecurity http)
 
                     // .pathMatchers("/user/orders/**").authenticated()
 
-                    //   fix
+                    //   fixed
                     .anyExchange().permitAll()
             );
 
     return http.build();
 }
 }
+
+
+
+
+
+
 
 
 

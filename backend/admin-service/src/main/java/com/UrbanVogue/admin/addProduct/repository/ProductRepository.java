@@ -1,4 +1,4 @@
-package com.UrbanVogue.admin.addProduct.repository;//package com.UrbanVogue.admin.addProduct.repository;
+//package com.UrbanVogue.admin.addProduct.repository;
 //
 //import com.UrbanVogue.admin.addProduct.entity.Product;
 //import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,7 +9,7 @@ package com.UrbanVogue.admin.addProduct.repository;//package com.UrbanVogue.admi
 //    List<Product> findByCategoryIgnoreCase(String category);
 //}
 
-
+package com.UrbanVogue.admin.addProduct.repository;
 import com.UrbanVogue.admin.addProduct.entity.Product;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

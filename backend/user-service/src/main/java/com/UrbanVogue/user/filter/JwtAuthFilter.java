@@ -20,7 +20,7 @@ import java.util.Collections;
 public class JwtAuthFilter extends OncePerRequestFilter {
 
     @Autowired
-    private JwtUtil jwtUtil; // same util (copy from gateway or shared)
+    private JwtUtil jwtUtil; // same util
 
     @Override
     protected void doFilterInternal(HttpServletRequest request,

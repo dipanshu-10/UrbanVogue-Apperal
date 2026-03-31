@@ -33,7 +33,7 @@ public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
             path.startsWith("/catalog")) {
         return chain.filter(exchange);
     }
-
+   // tokens from the auth-header of the http request.
     String authHeader = exchange.getRequest().getHeaders().getFirst("Authorization");
 
     //  DEBUG PRINT
@@ -70,7 +70,7 @@ public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         System.out.println("EMAIL: " + email);
         System.out.println("ROLE: " + role);
 
-        //  create authentication
+        //  create authentication object for the security config
         UsernamePasswordAuthenticationToken auth =
                 new UsernamePasswordAuthenticationToken(
                         email,
