@@ -14,17 +14,22 @@ public class Payment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "request_id", nullable = false)
     private String requestID;
 
+    @Column(nullable = false)
     private Double amount;
 
+    @Column(nullable = false)
     private String status;
 
-    @Column(unique = true)
+    @Column(name = "idempotency_key", nullable = false, unique = true)
     private String idempotencyKey;
 
+    @Column(name = "transaction_id", nullable = false)
     private String transactionId;
 
+    @Column(name = "payment_mode", nullable = false)
     private String paymentMode;
 
     private LocalDateTime createdAt = LocalDateTime.now();
