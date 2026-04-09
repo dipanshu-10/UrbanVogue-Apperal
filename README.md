@@ -831,9 +831,3 @@ spring.jpa.hibernate.ddl-auto=update
 ```
 
 > **Note:** `AUTO_SERVER=TRUE` enables H2's automatic mixed-mode, allowing multiple services to connect to the same database file simultaneously.
-
----
-
-## License
-
-This project is developed as part of the UrbanVogue Apparel e-commerce platform.
